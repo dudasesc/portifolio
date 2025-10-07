@@ -56,39 +56,31 @@ nav {
   display: none;
   font-size: 28px;
   cursor: pointer;
+  color: #004d99;
 }
 
 /* Menu mobile à esquerda */
 @media (max-width: 768px) {
   .menu {
-    display: none; /* começa escondido */
+    display: none;
     flex-direction: column;
-    position: fixed;      /* fixo na tela */
+    position: fixed;      
     top: 0;
-    left: 0;              /* abre pelo lado esquerdo */
-    height: 100vh;        /* ocupa toda altura da tela */
+    left: 0;              
+    height: 100vh;        
+    width: 220px;
     background-color: #cce7ff;
     border-right: 2px solid #004d99;
     padding: 2rem 1rem;
-    width: 220px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    gap: 20px;
     z-index: 999;
-  }
-
-  .menu li {
-    margin: 20px 0;
   }
 
   .menu-toggle {
     display: block;
-    color: #004d99;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  .menu.active {
-    display: flex; /* mostra o menu quando ativo */
   }
 }
+
 /* Main */
 main {
   max-width: 900px;
@@ -182,7 +174,7 @@ p, li {
   background-color: #0066cc;
 }
 
-/* Botão voltar ao topo */
+/* Botão voltar ao topo discreto */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -192,10 +184,15 @@ p, li {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #6c63ff;
-  color: white;
+  background-color: #99ccff; /* azul bebê */
+  color: #004d99;
   cursor: pointer;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #66b3ff;
 }
 
 /* Footer */
@@ -205,28 +202,4 @@ footer {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-footer a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none; /* começa escondido */
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #5198e0; /* azul bebê */
-  color: #002f5e;
-  cursor: pointer;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-}
-
-#backToTop:hover {
-  background-color: #66b3ff;
 }
