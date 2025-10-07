@@ -34,27 +34,39 @@ nav {
 
 .menu {
   display: flex;
-  justify-content: center;
   list-style: none;
-  padding: 1.5rem 0;
-  gap: 3.5rem;
 }
 
-.menu li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+.menu li {
+  margin: 0 15px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.menu li a:hover,
-.menu li a:focus {
-  background-color: #66b2ff;
-  outline: none;
+/* Para telas pequenas */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 /* Main container */
