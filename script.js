@@ -1,26 +1,40 @@
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (hamburger && menu) {
-  hamburger.addEventListener("click", () => {
-    if (menu.style.display === "flex") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "flex";
-      menu.style.flexDirection = "column"; // garante vertical
-    }
-  });
+  // MENU HAMBURGER ABRINDO À ESQUERDA
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
-  // Fechar menu ao clicar em um link
-  const links = menu.querySelectorAll("a");
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", () => {
+      if (menu.style.display === "flex") {
         menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
       }
     });
-  });
-}
+
+    // Fechar menu ao clicar em um link no mobile
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          menu.style.display = "none";
+        }
+      });
+    });
+  }
+
+  // BOTÃO VOLTAR AO TOPO
+  const backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   // FOTO INTERATIVA
   const foto = document.getElementById("minha-foto");
   if (foto) {
@@ -46,14 +60,4 @@ if (hamburger && menu) {
       mensagemBox.style.display = "none";
     });
   }
-  const backToTop = document.getElementById("backToTop");
-if (backToTop) {
-  window.addEventListener("scroll", () => {
-    backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-  });
-
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
+});
