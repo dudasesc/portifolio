@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio - Maria Eduarda</title>
+  <title>Portfólio - Início</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <nav>
       <ul class="menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -21,47 +22,25 @@
     <section id="inicio">
       <h1>Bem-vindo ao meu Portfólio</h1>
       <p>Oi, eu sou a Maria Eduarda! 🤍</p>
-      <img src="images/eu.png" alt="Foto da Maria Eduarda" class="foto" />
-    </section>
 
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p>
-        Sou a Maria Eduarda Ferreira Vieira. Tenho 15 anos, nasci na cidade de Arapongas - PR e moro aqui até hoje. 
-        Sou Católica Apostólica Romana, sirvo na minha Paróquia sendo Catequista e uma das líderes da Pastoral do Adolescente. 
-        Moro com meu pai, minha mãe, meu irmão e minha cachorrinha, Dora. Gosto muito de música, amo cantar e já fiz aula de violão.
-      </p>
-    </section>
+      <!-- Foto interativa -->
+      <img src="images/eu.png" alt="Foto da Maria Eduarda" class="foto" id="minha-foto" />
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Quer falar comigo? Entre em contato pelos links abaixo:</p>
-      <ul>
-        <li>Email: <a href="mailto:mariaeduardafvieira6@gmail.com">mariaeduardafvieira6@gmail.com</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/dudavhz_?igsh=MWtycG93YWcwMmpzNQ==" target="_blank" rel="noopener noreferrer">@dudavhz_</a></li>
-        <li>WhatsApp: <a href="https://wa.me/554398653481" target="_blank" rel="noopener noreferrer">Me chamar no WhatsApp</a></li>
-      </ul>
+      <!-- Botão -->
+      <div class="botao-container">
+        <button id="botao-msg">Clique aqui 💙</button>
+      </div>
+
+      <!-- Caixa de mensagem -->
+      <div id="mensagem-box" class="mensagem-oculta">
+        <p>Obrigada por visitar meu portfólio! 💙</p>
+        <button id="fechar-msg">Fechar</button>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 - Portfólio da Maria Eduarda</p>
   </footer>
-
-  <script>
-    // Navegação suave para âncoras no menu
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetID = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetID);
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  </script>
 </body>
 </html>
